@@ -5,7 +5,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 retry(3) {
-                    git branch: 'main', url: 'https://github.com/Pathum-Dilhara/CICD-Jenkins-Docker.git'
+                    git branch: 'main', url: 'https://github.com/Pathum-Dilhara/CICD-Jenkins-Docker'
                 }
             }
         }
