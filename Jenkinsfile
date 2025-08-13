@@ -1,7 +1,7 @@
 pipeline {
-    agent any
+    agent any 
     
-    stages {
+    stages { 
         stage('SCM Checkout') {
             steps {
                 retry(3) {
@@ -10,28 +10,28 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t pathumdilhara/reactapp:${BUILD_NUMBER} .'
+            steps {  
+                bat 'docker build -t pathumdilhara/reactapp:%BUILD_NUMBER% .'
             }
         }
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-password', variable: 'dockerhub-password')]) {
-                    script {  
-                        sh "docker login -u pathumdilhara -p '${dockerhub-password}'"
+                    script {
+                        bat "docker login -u pathumdilhara -p %dockerhub-password%"
                     }
                 }
             }
         }
         stage('Push Image') {
             steps {
-                sh "docker push pathumdilhara/reactapp:${BUILD_NUMBER}"
+                bat 'docker push pathumdilhara/reactapp:%BUILD_NUMBER%'
             }
         }
     }
     post {
         always {
-            sh 'docker logout'
+            bat 'docker logout'
         }
     }
 }
