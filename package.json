@@ -1,6 +1,5 @@
 {
-  "name": "new-folder--2-",
-  "homepage": "https://Pathum-Dilhara.github.io/test2/",
+  "name": "jenkins_project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -28,5 +26,17 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "vite": "^6.1.0"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pathum-Dilhara/CICD-Jenkins-Docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pathum-Dilhara/CICD-Jenkins-Docker/issues"
+  },
+  "homepage": "https://github.com/Pathum-Dilhara/CICD-Jenkins-Docker#readme"
 }
